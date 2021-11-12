@@ -36,25 +36,36 @@ export default function ItemSearch(){
         {return(
             <div className="itemSearch">
                 <h1>Housewares</h1>
-                {housewareData.slice(0, housewareData.length).map(
-                        function(item, index){
-                            const name = item[0].replace(/_/g, " ");
-                        return(<Items data={item} name={name} key={`houseware${index}`} /> )}
-                    )}
-                        <h1>Wall Mounted Items</h1>
-                    {wallmountedData.slice(0, wallmountedData.length).map(
-                        function(item, index){
-                            const name = item[0].replace(/_/g, " ");
-                        return(<Items data={item} name={name} key={`wall${index}`}  />  )}
-                    )}
+                <div className="grid" >
+                    {housewareData.slice(0, housewareData.length).map(
+                            function(item, index){
+                                const name = item[0].replace(/_/g, " ");
+                            return(
 
+                                <Items data={item} name={name} key={`houseware${index}`} /> 
+                            )}
+                        )}
+                </div>
+                        <h1>Wall Mounted Items</h1>
+                        <div className="grid" >
+                        {wallmountedData.slice(0, wallmountedData.length).map(
+                            function(item, index){
+                                const name = item[0].replace(/_/g, " ");
+                            return(
+                                <Items data={item} name={name}  key={`wall${index}`} />  
+                            )}
+                        )}
+                        </div>
                               <h1>Misc Items</h1>
+                              <div className="grid" >
                 {miscData.slice(0, miscData.length).map(
                         function(item, index){
                             const name = item[0].replace(/_/g, " ");
-                        return(<Items data={item} name={name} key={index} /> )}
+                        return(
+                                <Items data={item} name={name}  key={index} /> 
+                            )}
                     )}
-                  
+                   </div>
              </div>
         )}
     

@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Details(props){
     const detail = props.data;
-    let buyprice = detail[`buy-price`];
-    if (buyprice === null){buyprice = "cannot buy";}
-    const sellprice = detail[`sell-price`];
+    let buyprice = `${detail[`buy-price`]} bells`;
+    if (detail[`buy-price`] === null){buyprice = "Cannot Buy Item";}
+    const sellprice = `${detail[`sell-price`]} bells`;
     const image = detail[`image_uri`];
     const source = detail.source;
     const sourceDetails = detail[`source-detail`];
@@ -30,15 +30,15 @@ export default function Details(props){
     else {customizablePattern = `Unable to customize pattern`; customPatternIcon = <i className="fas fa-times-circle" style={{color: "red"}}></i>}
 
 if (detail){ 
-    return(<div className="details">
+    return(<span className="details">
         <img src={image} alt={props.name} />
         <ul>
             <li>Color: {color} </li>
             <li>Size: {size}</li>
             <li>Obtained from: {source}</li>
             <li>{sourceDetails}</li>
-            <li>Buy for: {buyprice} bells</li>
-            <li>Sell for: {sellprice} bells</li>
+            <li>Buy for: {buyprice} </li>
+            <li>Sell for: {sellprice} </li>
             <li>{customBodyIcon} {customizableBody}</li>
             <li>{customPatternIcon} {customizablePattern}</li>
             <li>{interactive}</li>
@@ -46,7 +46,7 @@ if (detail){
             <li>{hha1}</li>
             <li>{hha2}</li>
         </ul>
-    </div>)
+    </span>)
 }   
 else {return "loading"}
 }
