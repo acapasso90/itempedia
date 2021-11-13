@@ -41,6 +41,7 @@ export default function WallMountedSearch(){
                         <div className="col">
                         <NavLink to="/"> Housewares </NavLink>
                         <NavLink to="/misc"> Misc </NavLink>
+                        <NavLink to="/art"> Art </NavLink>
                     </div>
                         <form>
                             <input type="text" onChange={setSearch} placeholder="Filter by name/color"></input>

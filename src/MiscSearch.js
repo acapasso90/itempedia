@@ -39,6 +39,7 @@ export default function MiscSearch(){
                     <div className="col">
                         <NavLink to="/wall"> Wall Mounted </NavLink>
                         <NavLink to="/"> Housewares </NavLink>
+                        <NavLink to="/art"> Art </NavLink>
                     </div>
                         <form>
                             <input type="text" onChange={setSearch} placeholder="Filter by name/color"></input>

@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
-import Items from "./Items.js";
+import Art from "./Art.js";
 
 import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom";
 
 
 export default function HouseWareSearch(){
     const [loaded, setLoaded] = useState(false);
-    const [housewareData, setHousewareData] = useState();
+    const [artData, setArtData] = useState();
     const [searchterm, setSearchterm] = useState("");
 
     function Loaded(){
@@ -15,12 +15,11 @@ export default function HouseWareSearch(){
     }
 
     useEffect(() => {
-
         let mounted = true;
         const cancelTokenSource = axios.CancelToken.source();
        if (mounted) {
-           axios.get(`http://acnhapi.com/v1/houseware`).then(
-               response => { setHousewareData(Object.entries(response.data))}
+           axios.get(`http://acnhapi.com/v1/art/`).then(
+               response => { setArtData(Object.entries(response.data))}
            )
            Loaded()
       }
@@ -30,34 +29,35 @@ export default function HouseWareSearch(){
         setSearchterm(event.target.value.toLowerCase());
     }
 
-    if (housewareData) 
+    if (artData) 
         {return(
             <div className="itemSearch">
                 <header>
                     <div className="row">
                         <p>Itempedia</p>
                         <div className="col">
+                            <NavLink to="/"> Housewares </NavLink>
                             <NavLink to="/wall"> Wall Mounted </NavLink>
                             <NavLink to="/misc"> Misc </NavLink>
-                            <NavLink to="/art"> Art </NavLink>
+                            
                         </div>
                     <form>
-                            <input type="text" onChange={setSearch} placeholder="Filter by name/color"></input>
+                            <input type="text" onChange={setSearch} placeholder="Filter by name"></input>
                         </form>
                         </div>
                 </header>
                 
-                <h1>Housewares</h1>
+                <h1>Art</h1>
                 <div className="grid" >
-                    {housewareData.slice(0, housewareData.length).map(
+                    {artData.slice(0, artData.length).map(
                             function(item, index){
+                                console.log(item);
                                 const name = item[0].replace(/_/g, " ");
-                                const color = item[1].slice(0, item[1].length).map(function(item, index){return(item[`color-1`])});
-                                    if (name.includes(searchterm)|| color.includes(searchterm)){
-                                        return(
-                                            <Items data={item} name={name} key={`houseware${index}`} /> 
+                                  if (name.includes(searchterm)){
+                                          return(
+                                         <Art data={item} name={name} key={`artwork${index}`} /> 
                                         )}
-                                            else {return null;}
+                                    else {return null;}
                                 }  
                             )
                         }
