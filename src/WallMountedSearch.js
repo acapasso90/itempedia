@@ -44,7 +44,7 @@ export default function WallMountedSearch(){
                         <NavLink to="/art"> Art </NavLink>
                     </div>
                         <form>
-                            <input type="text" onChange={setSearch} placeholder="Filter by name/color"></input>
+                            <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
                         </form>
                     </div>
                 </header>
@@ -55,15 +55,35 @@ export default function WallMountedSearch(){
                         {wallmountedData.slice(0, wallmountedData.length).map(
                             function(item, index){
                                 const name = item[0].replace(/_/g, " ");
-                                const color = item[1].slice(0, item[1].length).map(function(item, index){return(item[`color-1`])});
-                                if (name.includes(searchterm)|| color.includes(searchterm)){
-                            return(
-                                <Items data={item} name={name}  key={`wall${index}`} />  
-                            )}
-                            else {return null;}
-                            })}
-                        </div>
-                             
+                                const theme = item[1][0][['hha-concept-1']];
+                                if (theme){
+                                console.log(theme.includes(searchterm))}
+                                const theme2 = item[1][0][['hha-concept-2']];
+                                // if theme exists and includes searchterm display item info
+                                    if (theme){
+                                        if (theme.includes(searchterm)){
+                                            return(
+                                                <Items data={item} name={name} key={`houseware${index}`} /> 
+                                            )
+                                        }
+                                // if theme2 exists and includes searchterm display item info
+                                        if (theme2){
+                                            if (theme2.includes(searchterm)){ return(
+                                                <Items data={item} name={name} key={`houseware${index}`} /> 
+                                            )}
+                                        }
+                                    }
+                                // if item name includes searchterm display item info
+                                    if (name.includes(searchterm)){
+                                        return(
+                                            <Items data={item} name={name} key={`houseware${index}`} /> 
+                                        )}
+                                    else {return null;}
+                                }  
+                            )
+                        }
+                </div>
+
              </div>
         )}
     

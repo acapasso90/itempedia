@@ -31,7 +31,7 @@ export default function Details(props){
 
 if (detail){ 
     return(<span className="details">
-        <img src={image} alt={props.name} />
+        <img src={image} alt={props.name} loading="lazy" />
         <ul>
             <li>Color: {color} </li>
             <li>Size: {size}</li>
