@@ -13,7 +13,6 @@ export default function Art(props){
         let falseIcon = null;
         if (hasFake){hasFake = "Yes"; falseIcon = <i className="fas fa-check-circle" style={{color: "green"}}></i>}
         else {hasFake = "No"; falseIcon = <i className="fas fa-times-circle" style={{color: "red"}}></i>}
-        console.log(details.hasFake);
         const museumDesc = details['museum-desc'];
         return(
             <span className="Art">

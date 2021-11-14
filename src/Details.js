@@ -20,9 +20,9 @@ export default function Details(props){
     let customBodyIcon = null;
     let customPatternIcon = null;
     let hha1 = null;
-    if (detail['hha-concept-1']){hha1 = `Happy Home Room Academy Concept: ${detail[`hha-concept-1`]}`;}
+    if (detail['hha-concept-1']){hha1 = `Happy Home Room Academy Theme: ${detail[`hha-concept-1`]}`;}
     let hha2 = null;
-    if (detail[`hha-concept-2`]){hha2 = `Happy Home Room Academy Concept: ${detail[`hha-concept-2`]}`;}
+    if (detail[`hha-concept-2`]){hha2 = `Happy Home Room Academy Theme 2: ${detail[`hha-concept-2`]}`;}
    if (detail.canCustomizeBody){customizableBody =  " Able to customize body"; customBodyIcon = <i className="fas fa-check-circle" style={{color: "green"}}></i> }
   else {customizableBody = `Unable to customize body`; customBodyIcon = <i className="fas fa-times-circle" style={{color: "red"}}></i>}
     let customizablePattern = detail.canCustomizePattern;
