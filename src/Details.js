@@ -33,20 +33,39 @@ export default function Details(props){
 
     function showInfo(){
         let active = document.querySelector('.active');
+        let button = document.getElementById(`${id}`);
+        let itemDetails = button.parentElement.parentElement
         if (active){
+            if (document.querySelector(`.active`).id === id) {
+                button.classList.toggle('active');
+                button.style.display = "none";
+                itemDetails.style.paddingBottom = "20px";
+                itemDetails.style.width = "20%";
+            }
+            else {
             active.style.display = "none";
             active.classList.toggle('active');
+            active.parentElement.parentElement.style.paddingBottom = "20px";
+            active.parentElement.parentElement.style.width = "20%";
+            button.classList.toggle('active');
+            itemDetails.style.width = "35%";
+            button.style.display = "block";
         }
-        let button = document.getElementById(`${id}`);
-        button.classList.toggle('active');
+        }
+        else {
+            itemDetails.style.paddingBottom = "0";
+            itemDetails.style.width = "35%";
+            button.classList.toggle('active');
         button.style.display = "block";
+        } 
     }
 
 if (detail){ 
     return(
     <span className="details">
-        <button onClick={showInfo}>More Info </button>
+        <button className="button" onClick={showInfo}>More Info </button>
         <div className="hidden" id={`${id}`}>
+            <div className="row">
             <ul>
                 <li>Color: {color} </li>
                 <li>Size: {size}</li>
@@ -54,6 +73,8 @@ if (detail){
                 <li>{sourceDetails}</li>
                 <li>Buy for: {buyprice} </li>
                 <li>Sell for: {sellprice} </li>
+            </ul>
+            <ul>
                 <li>{customBodyIcon} {customizableBody}</li>
                 <li>{customPatternIcon} {customizablePattern}</li>
                 <li>{interactiveIcon} {interactive}</li>
@@ -61,6 +82,7 @@ if (detail){
                 <li>Happy Home Room Academy Theme:</li>
                 <li>{hha1}</li>
             </ul>  
+            </div>
         </div>
       
     </span>)

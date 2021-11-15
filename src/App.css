@@ -36,13 +36,15 @@ input::placeholder, .ItemDetails {color: #440f0f; }
   border: 4px solid #702b2b;
   box-shadow: inset -1px -1px 5px #914215;
   border-radius: 3px;
+  width: 20%;
+  padding-bottom: 20px;
+  margin: 0 0.5% 2% 0.5%;
 }
 
-.grid { display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  row-gap: 25px;
-  column-gap: 1.5%;
+.grid { display: flex;
+  flex-direction: row;
+ flex-wrap: wrap;
+ align-items: center;
 }
 
 .row {display: flex;
