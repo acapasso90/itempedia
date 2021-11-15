@@ -48,8 +48,6 @@ export default function HouseWareSearch(){
                             function(item, index){
                                 const name = item[0].replace(/_/g, " ");
                                 const theme = item[1][0][['hha-concept-1']];
-                                if (theme){
-                                console.log(theme.includes(searchterm))}
                                 const theme2 = item[1][0][['hha-concept-2']];
                                 // if theme exists and includes searchterm display item info
                                     if (theme){

@@ -51,7 +51,6 @@ export default function HouseWareSearch(){
                 <div className="grid" >
                     {artData.slice(0, artData.length).map(
                             function(item, index){
-                                console.log(item);
                                 const name = item[0].replace(/_/g, " ");
                                   if (name.includes(searchterm)){
                                           return(

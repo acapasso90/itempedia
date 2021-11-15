@@ -5,15 +5,8 @@ import Items from "./Items.js";
 import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom";
 
 export default function WallMountedSearch(){
-    const [loaded, setLoaded] = useState(false);
     const [wallmountedData, setWallmountedData] = useState();
-    const [miscData, setMiscData] = useState();
-    const [housewareData, setHousewareData] = useState();
     const [searchterm, setSearchterm] = useState("");
-
-    function Loaded(){
-        setLoaded(true);
-    }
 
     useEffect(() => {
 
@@ -24,7 +17,6 @@ export default function WallMountedSearch(){
             response => {
                setWallmountedData( Object.entries(response.data))}
            );
-           Loaded()
       }
     }, [])
 

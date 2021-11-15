@@ -1,15 +1,52 @@
+::selection{background-color:#3c744a;
+  color: #ffff;}
+
+a {color: #702b2b;
+font-weight: bold;
+text-decoration: none;}
+    
+a:hover {color: #31020f;
+text-decoration: none;}
+
 .App {
   text-align: center;
+}
+
+body, header, footer {background-color: #fdf3c9;}
+  
+body {
+  color: #8B7A65;
+  }
+
+body, input { font-weight: bold;
+font-family: 'Short Stack', cursive;
+letter-spacing: 1px; }
+
+.hidden {display: none;}
+
+ input {background-color: #ee9d55;
+  border: 4px solid #702b2b;
+  box-shadow: inset -1px 0px 2px #6d310f;
+}
+
+input::placeholder, .ItemDetails {color: #440f0f; }
+
+.ItemDetails {
+  background-color: #f3a561;
+  border: 4px solid #702b2b;
+  box-shadow: inset -1px -1px 5px #914215;
+  border-radius: 3px;
 }
 
 .grid { display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  row-gap: 55px;
+  row-gap: 25px;
+  column-gap: 1.5%;
 }
 
 .row {display: flex;
 flex-direction: row;}
 
 ul {list-style: none;
-padding: none;}
+padding: 0;}

@@ -15,13 +15,14 @@ export default function Art(props){
         else {hasFake = "No"; falseIcon = <i className="fas fa-times-circle" style={{color: "red"}}></i>}
         const museumDesc = details['museum-desc'];
         return(
-            <span className="Art">
+            <span className="ItemDetails">
                 <h2>{props.name}</h2>
                 <a href={image} target="_blank"><img src={image} alt={props.name} /></a>
                 <ul>
                     <li>Has Fake: {falseIcon} {hasFake}</li>
                     <li>Buy for: {buyPrice} bells</li>
                     <li>Sell for: {sellPrice} bells</li>
+                    <br />
                     <li>{museumDesc}</li>
                 </ul>
             </span>
