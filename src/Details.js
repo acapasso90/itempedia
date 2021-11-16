@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function Details(props){
     const detail = props.data;
@@ -30,40 +30,49 @@ export default function Details(props){
     if (detail.canCustomizePattern){customizablePattern = `Able to customize pattern`; customPatternIcon = <i className="fas fa-check-circle" style={{color: "green"}}></i>}
     else {customizablePattern = `Unable to customize pattern`; customPatternIcon = <i className="fas fa-times-circle" style={{color: "red"}}></i>}
     const id = detail[`file-name`];
+    const [buttonText, setButtonText] = useState('More Info');
+
 
     function showInfo(){
         let active = document.querySelector('.active');
-        let button = document.getElementById(`${id}`);
-        let itemDetails = button.parentElement.parentElement
+        let moreInfo = document.getElementById(`${id}`);
+        let itemDetails = moreInfo.parentElement.parentElement
         if (active){
             if (document.querySelector(`.active`).id === id) {
-                button.classList.toggle('active');
-                button.style.display = "none";
+                moreInfo.classList.toggle('active');
+                moreInfo.style.display = "none";
                 itemDetails.style.paddingBottom = "20px";
+                itemDetails.style.backgroundColor = "#f3a561";
                 itemDetails.style.width = "20%";
+                setButtonText("More Info");
             }
             else {
             active.style.display = "none";
             active.classList.toggle('active');
             active.parentElement.parentElement.style.paddingBottom = "20px";
             active.parentElement.parentElement.style.width = "20%";
-            button.classList.toggle('active');
-            itemDetails.style.width = "35%";
-            button.style.display = "block";
+            active.parentElement.parentElement.style.backgroundColor = "#f3a561";
+            moreInfo.classList.toggle('active');
+            itemDetails.style.width = "40%";
+            itemDetails.style.backgroundColor = "#f7c59a";
+            moreInfo.style.display = "block";
+            setButtonText("Less Info");
         }
         }
         else {
             itemDetails.style.paddingBottom = "0";
-            itemDetails.style.width = "35%";
-            button.classList.toggle('active');
-        button.style.display = "block";
+            itemDetails.style.width = "40%";
+            itemDetails.style.backgroundColor = "#f7c59a";
+            moreInfo.classList.toggle('active');
+            moreInfo.style.display = "block";
+            setButtonText("Less Info");
         } 
     }
 
 if (detail){ 
     return(
     <span className="details">
-        <button className="button" onClick={showInfo}>More Info </button>
+        <button className="button" onClick={showInfo}> {buttonText} </button>
         <div className="hidden" id={`${id}`}>
             <div className="row">
             <ul>
