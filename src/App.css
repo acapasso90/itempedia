@@ -22,6 +22,15 @@ body, input { font-weight: bold;
 font-family: 'Short Stack', cursive;
 letter-spacing: 1px; }
 
+.container {width: 100vw;
+position: relative;}
+
+.details .row {width: 90%;
+margin-left: auto;
+margin-right: auto;}
+
+header .col {width: 33%;}
+
 .hidden {display: none;}
 
  input {background-color: #ee9d55;
@@ -36,19 +45,25 @@ input::placeholder, .ItemDetails {color: #440f0f; }
   border: 4px solid #702b2b;
   box-shadow: inset -1px -1px 5px #914215;
   border-radius: 3px;
-  width: 20%;
+  width: 21%;
   padding-bottom: 20px;
-  margin: 0 0.5% 2% 0.5%;
+  margin: 0 1.25% 2% 1.25%;
 }
 
 .grid { display: flex;
   flex-direction: row;
  flex-wrap: wrap;
  align-items: center;
+ width: 95%;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 .row {display: flex;
-flex-direction: row;}
+flex-direction: row;
+margin: 0;
+padding: 0;
+width: 100%;}
 
 ul {list-style: none;
 padding: 0;}

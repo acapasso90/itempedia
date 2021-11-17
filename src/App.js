@@ -10,12 +10,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Routes>
-          <Route exact  path="/" element={<HousewareSearch />} />
-          <Route path="/wall" element={<WallMountedSearch />} />
-          <Route path="/misc" element={<MiscSearch />} />
-          <Route path="/art" element={<ArtSearch />} />
-      </Routes>
+        <div className="container">
+          <Routes>
+              <Route exact  path="/" element={<HousewareSearch />} />
+              <Route path="/wall" element={<WallMountedSearch />} />
+              <Route path="/misc" element={<MiscSearch />} />
+              <Route path="/art" element={<ArtSearch />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

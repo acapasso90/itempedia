@@ -30,18 +30,21 @@ export default function HouseWareSearch(){
             <div className="itemSearch">
                 <header>
                     <div className="row">
-                        <p>Itempedia</p>
+                        <div className="col">
+                            <p>Itempedia</p>
+                        </div>
                         <div className="col">
                             <NavLink to="/wall"> Wall Mounted </NavLink>
                             <NavLink to="/misc"> Misc </NavLink>
                             <NavLink to="/art"> Art </NavLink>
                         </div>
-                    <form>
-                            <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
-                        </form>
+                        <div className="col">
+                            <form>
+                                <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
+                            </form>
                         </div>
-                </header>
-                
+                    </div>
+                </header>          
                 <h1>Housewares</h1>
                 <div className="grid" >
                     {housewareData.slice(0, housewareData.length).map(
@@ -73,10 +76,8 @@ export default function HouseWareSearch(){
                             )
                         }
                 </div>
-
              </div>
         )}
-    
     else 
         {return "currently loading"}
 }
