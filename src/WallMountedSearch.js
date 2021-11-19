@@ -29,15 +29,19 @@ export default function WallMountedSearch(){
             <div className="itemSearch">
                 <header>
                     <div className="row">
-                        <p>Itempedia</p>
                         <div className="col">
-                        <NavLink to="/"> Housewares </NavLink>
-                        <NavLink to="/misc"> Misc </NavLink>
-                        <NavLink to="/art"> Art </NavLink>
-                    </div>
-                        <form>
-                            <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
-                        </form>
+                            <p>Itempedia</p>
+                        </div>
+                        <div className="col">
+                            <NavLink to="/"> Housewares </NavLink>
+                            <NavLink to="/misc"> Misc </NavLink>
+                            <NavLink to="/art"> Art </NavLink>
+                        </div>
+                        <div className="col">
+                            <form>
+                                <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
+                            </form>
+                        </div>
                     </div>
                 </header>
                 
@@ -48,8 +52,6 @@ export default function WallMountedSearch(){
                             function(item, index){
                                 const name = item[0].replace(/_/g, " ");
                                 const theme = item[1][0][['hha-concept-1']];
-                                if (theme){
-                                console.log(theme.includes(searchterm))}
                                 const theme2 = item[1][0][['hha-concept-2']];
                                 // if theme exists and includes searchterm display item info
                                     if (theme){

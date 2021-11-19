@@ -34,17 +34,20 @@ export default function HouseWareSearch(){
             <div className="itemSearch">
                 <header>
                     <div className="row">
-                        <p>Itempedia</p>
+                        <div className="col">
+                            <p>Itempedia</p>
+                        </div>
                         <div className="col">
                             <NavLink to="/"> Housewares </NavLink>
                             <NavLink to="/wall"> Wall Mounted </NavLink>
                             <NavLink to="/misc"> Misc </NavLink>
-                            
                         </div>
-                    <form>
-                            <input type="text" onChange={setSearch} placeholder="Filter by name"></input>
-                        </form>
+                        <div className="col">
+                            <form>
+                                <input type="text" onChange={setSearch} placeholder="Filter by name"></input>
+                            </form>
                         </div>
+                    </div>
                 </header>
                 
                 <h1>Art</h1>

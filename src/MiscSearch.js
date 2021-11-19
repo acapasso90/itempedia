@@ -35,15 +35,19 @@ export default function MiscSearch(){
             <div className="itemSearch">
                 <header>
                     <div className="row">
-                        <p>Itempedia</p>
-                    <div className="col">
-                        <NavLink to="/wall"> Wall Mounted </NavLink>
-                        <NavLink to="/"> Housewares </NavLink>
-                        <NavLink to="/art"> Art </NavLink>
-                    </div>
-                        <form>
-                            <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
-                        </form>
+                        <div className="col">
+                            <p>Itempedia</p>
+                        </div>
+                        <div className="col">
+                            <NavLink to="/wall"> Wall Mounted </NavLink>
+                            <NavLink to="/"> Housewares </NavLink>
+                            <NavLink to="/art"> Art </NavLink>
+                        </div>
+                        <div>
+                            <form>
+                                <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
+                            </form>
+                        </div>
                     </div>
                 </header>
                               <h1>Misc Items</h1>

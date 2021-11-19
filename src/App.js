@@ -17,6 +17,9 @@ function App() {
               <Route path="/misc" element={<MiscSearch />} />
               <Route path="/art" element={<ArtSearch />} />
           </Routes>
+          <footer>
+            App made by <a href="https://www.amandacapasso.com" target="_blank" > Amanda Capasso </a>
+          </footer>
         </div>
       </div>
     </Router>
