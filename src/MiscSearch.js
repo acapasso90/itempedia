@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom
 export default function MiscSearch(){
     const [loaded, setLoaded] = useState(false);
     const [miscData, setMiscData] = useState();
-    const [searchterm, setSearchterm] = useState("");
+    const [searchterm, setSearchterm] = useState("cake");
+    let searchText = null;
 
     function Loaded(){
         setLoaded(true);
@@ -26,8 +27,13 @@ export default function MiscSearch(){
       }
     }, [])
 
+    function formSubmit(event){
+        event.preventDefault();
+        setSearchterm(searchText);
+    }
+
     function setSearch(event){
-        setSearchterm(event.target.value.toLowerCase());
+        searchText = event.target.value.toLowerCase();
     }
 
     if (miscData) 
@@ -44,13 +50,15 @@ export default function MiscSearch(){
                             <NavLink to="/art"> Art </NavLink>
                         </div>
                         <div>
-                            <form>
+                            <form onSubmit={formSubmit}>
                                 <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
+                                <button onClick={formSubmit}><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                     </div>
                 </header>
                               <h1>Misc Items</h1>
+                              <h2>Currently showing <span className="searchterm">{searchterm}</span> items</h2>
                               <div className="grid" >
                 {miscData.slice(0, miscData.length).map(
                           function(item, index){

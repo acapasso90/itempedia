@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom
 
 export default function WallMountedSearch(){
     const [wallmountedData, setWallmountedData] = useState();
-    const [searchterm, setSearchterm] = useState("");
+    const [searchterm, setSearchterm] = useState("wreath");
+    let searchText = null;
 
     useEffect(() => {
 
@@ -20,8 +21,13 @@ export default function WallMountedSearch(){
       }
     }, [])
 
+    function formSubmit(event){
+        event.preventDefault();
+        setSearchterm(searchText);
+    }
+
     function setSearch(event){
-        setSearchterm(event.target.value.toLowerCase());
+        searchText = event.target.value.toLowerCase();
     }
 
     if (wallmountedData) 
@@ -38,8 +44,9 @@ export default function WallMountedSearch(){
                             <NavLink to="/art"> Art </NavLink>
                         </div>
                         <div className="col">
-                            <form>
+                            <form onSubmit={formSubmit}>
                                 <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
+                                <button onClick={formSubmit}><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                     </div>
@@ -47,6 +54,7 @@ export default function WallMountedSearch(){
                 
              
                         <h1>Wall Mounted Items</h1>
+                        <h2>Currently showing <span className="searchterm">{searchterm}</span> wallmounted items</h2>
                         <div className="grid" >
                         {wallmountedData.slice(0, wallmountedData.length).map(
                             function(item, index){

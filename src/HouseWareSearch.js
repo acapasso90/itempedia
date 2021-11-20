@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom
 
 export default function HouseWareSearch(){
     const [housewareData, setHousewareData] = useState();
-    const [searchterm, setSearchterm] = useState("");
+    const [searchterm, setSearchterm] = useState("spooky");
+    let searchText = null;
 
 
     useEffect(() => {
@@ -21,9 +22,15 @@ export default function HouseWareSearch(){
       }
     }, [])
 
-    function setSearch(event){
-        setSearchterm(event.target.value.toLowerCase());
+    function formSubmit(event){
+        event.preventDefault();
+        setSearchterm(searchText);
     }
+
+    function setSearch(event){
+        searchText = event.target.value.toLowerCase();
+    }
+
 
     if (housewareData) 
         {return(
@@ -39,13 +46,15 @@ export default function HouseWareSearch(){
                             <NavLink to="/art"> Art </NavLink>
                         </div>
                         <div className="col">
-                            <form>
+                            <form onSubmit={formSubmit}>
                                 <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
+                                <button onClick={formSubmit}><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                     </div>
                 </header>          
                 <h1>Housewares</h1>
+                <h2>Currently showing <span className="searchterm">{searchterm}</span> housewares</h2>
                 <div className="grid" >
                     {housewareData.slice(0, housewareData.length).map(
                             function(item, index){
