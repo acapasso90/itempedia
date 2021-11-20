@@ -2,17 +2,12 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import Items from "./Items.js";
 
-import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom";
-
-
 export default function HouseWareSearch(){
     const [housewareData, setHousewareData] = useState();
     const [searchterm, setSearchterm] = useState("spooky");
     let searchText = null;
 
-
     useEffect(() => {
-
         let mounted = true;
         const cancelTokenSource = axios.CancelToken.source();
        if (mounted) {
@@ -35,24 +30,10 @@ export default function HouseWareSearch(){
     if (housewareData) 
         {return(
             <div className="itemSearch">
-                <header>
-                    <div className="row">
-                        <div className="col">
-                            <p>Itempedia</p>
-                        </div>
-                        <div className="col">
-                            <NavLink to="/wall"> Wall Mounted </NavLink>
-                            <NavLink to="/misc"> Misc </NavLink>
-                            <NavLink to="/art"> Art </NavLink>
-                        </div>
-                        <div className="col">
-                            <form onSubmit={formSubmit}>
+                <form onSubmit={formSubmit}>
                                 <input type="text" onChange={setSearch} placeholder="Filter by name/theme"></input>
-                                <button onClick={formSubmit}><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </header>          
+                                <button onClick={formSubmit}><i className="fas fa-search"></i></button>
+                </form>         
                 <h1>Housewares</h1>
                 <h2>Currently showing <span className="searchterm">{searchterm}</span> housewares</h2>
                 <div className="grid" >

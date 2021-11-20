@@ -72,7 +72,7 @@ export default function Details(props){
 if (detail){ 
     return(
     <span className="details">
-        <button className="button" onClick={showInfo}> {buttonText} </button>
+        <button className="moreInfoButton" onClick={showInfo}> {buttonText} </button>
         <div className="hidden" id={`${id}`}>
             <div className="row">
             <ul>

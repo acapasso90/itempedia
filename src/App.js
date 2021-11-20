@@ -3,6 +3,7 @@ import HousewareSearch from "./HouseWareSearch";
 import WallMountedSearch from './WallMountedSearch';
 import MiscSearch from './MiscSearch';
 import ArtSearch from "./ArtSearch";
+import Header from "./Header";
 import { BrowserRouter as Router, Routes, Route, NavLink} from "react-router-dom";
 
 
@@ -11,6 +12,7 @@ function App() {
     <Router>
       <div className="App">
         <div className="container">
+          <Header />
           <Routes>
               <Route exact  path="/" element={<HousewareSearch />} />
               <Route path="/wall" element={<WallMountedSearch />} />

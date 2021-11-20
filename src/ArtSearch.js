@@ -2,13 +2,13 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import Art from "./Art.js";
 
-import { BrowserRouter as Router, Route, NavLink, Routes} from "react-router-dom";
 
 
 export default function HouseWareSearch(){
     const [loaded, setLoaded] = useState(false);
     const [artData, setArtData] = useState();
     const [searchterm, setSearchterm] = useState("");
+    let searchText = null;
 
     function Loaded(){
         setLoaded(true);
@@ -25,33 +25,24 @@ export default function HouseWareSearch(){
       }
     }, [])
 
+    function formSubmit(event){
+        event.preventDefault();
+        setSearchterm(searchText);
+    }
+
     function setSearch(event){
-        setSearchterm(event.target.value.toLowerCase());
+        searchText = event.target.value.toLowerCase();
     }
 
     if (artData) 
         {return(
             <div className="itemSearch">
-                <header>
-                    <div className="row">
-                        <div className="col">
-                            <p>Itempedia</p>
-                        </div>
-                        <div className="col">
-                            <NavLink to="/"> Housewares </NavLink>
-                            <NavLink to="/wall"> Wall Mounted </NavLink>
-                            <NavLink to="/misc"> Misc </NavLink>
-                        </div>
-                        <div className="col">
-                            <form>
-                                <input type="text" onChange={setSearch} placeholder="Filter by name"></input>
-                            </form>
-                        </div>
-                    </div>
-                </header>
-                
+                <form onSubmit={formSubmit}>
+                    <input type="text" onChange={setSearch} placeholder="Filter by name"></input>
+                    <button onClick={formSubmit}><i className="fas fa-search"></i></button>
+                </form>
                 <h1>Art</h1>
-                <div className="grid" >
+                <div className="artgrid" >
                     {artData.slice(0, artData.length).map(
                             function(item, index){
                                 const name = item[0].replace(/_/g, " ");
