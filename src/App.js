@@ -20,7 +20,7 @@ function App() {
               <Route path="/art" element={<ArtSearch />} />
           </Routes>
           <footer>
-            App made by <a href="https://www.amandacapasso.com" target="_blank" > Amanda Capasso </a>
+            App made by <a href="https://www.amandacapasso.com" target="_blank" rel="noreferrer" > Amanda Capasso </a>
           </footer>
         </div>
       </div>

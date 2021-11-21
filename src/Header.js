@@ -61,12 +61,7 @@ export default function Header(){
 <div className="header">
 <header>
                     <div className="row">
-                        <div className="col">
-                            <div className="row">
-                                <img src={leafIcon} alt="leafIcon" className="leafIcon"/>
-                                <p>Itempedia</p>
-                            </div>
-                        </div>
+                        
                         <div className="row">
                             <div className="bubble">
                                 <div className="iconCol">
@@ -90,6 +85,12 @@ export default function Header(){
                                 <div className="iconCol">
                                     <NavLink to="/art" onClick={artActive}> <div className="navText"> Art </div> 
                                     <img src={artIcon} alt="art" className="navIcon" /> </NavLink>
+                                </div>
+                            </div>
+                            <div className="col">
+                                <div className="row">
+                                    <img src={leafIcon} alt="leafIcon" className="leafIcon"/>
+                                    <p> Itempedia </p>
                                 </div>
                             </div>
                         </div>

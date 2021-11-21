@@ -24,7 +24,7 @@ letter-spacing: 1px; }
 
 .bubble {border-radius: 50%;
 background-color: white;
-width: 90px;
+width: 80px;
 }
 
 #bubble2 {position: relative;
@@ -56,8 +56,10 @@ margin-left: auto;
 margin-right: auto;}
 
 form {position: fixed;
-top: 0;
-right: 0;}
+top: 5.5%;
+right: 1%;}
+
+form button{  height: 30px;}
 
 footer {position: absolute;
   width: 100%;
@@ -69,20 +71,28 @@ left: 0;
 width: 100%;
 box-shadow: 0px -1px 8px #6d310f;}
 
-header .col {width: 33%;}
+header .col {position: absolute;
+top: 14%;
+left: 40%;}
 
 header .iconCol {width: 100%;
   margin-left: 2%;
   margin-right: 2%;
-  height: 100%;
+  margin-top: 12%;
+  height: 90%;
 display: flex;
 align-items: center;
 flex-direction: column;}
 
+header p {font-size: 19pt;}
+
 .hidden {display: none;}
+
 
 input {background-color: #ee9d55;
   width: 220px;
+  margin-right: 2px;
+  height: 20px;
 }
 
 .ItemDetails {
@@ -100,7 +110,8 @@ input {background-color: #ee9d55;
   width: 98%;
 }
 
-.itemSearch {margin-top: 110px;}
+.itemSearch, .loading {margin-top: 110px;}
+
 .grid, .artgrid { display: flex;
   flex-direction: row;
  flex-wrap: wrap;
@@ -114,9 +125,11 @@ input {background-color: #ee9d55;
 .artgrid {align-items: top;}
 
 .leafIcon {max-width: 40px;
-max-height: 40px;}
+max-height: 40px;
+position: relative;
+top: 20px}
 
-.navIcon {width: 47px;
+.navIcon {width: 37px;
 }
 
 

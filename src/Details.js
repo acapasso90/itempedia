@@ -5,7 +5,6 @@ export default function Details(props){
     let buyprice = `${detail[`buy-price`]} bells`;
     if (detail[`buy-price`] === null){buyprice = "Cannot Buy Item";}
     const sellprice = `${detail[`sell-price`]} bells`;
-    const image = detail[`image_uri`];
     const source = detail.source;
     const sourceDetails = detail[`source-detail`];
     const color = detail[`color-1`]
@@ -34,12 +33,12 @@ export default function Details(props){
 
 
     function showInfo(){
-        let active = document.querySelector('.active');
+        let active = document.querySelector('.activePannel');
         let moreInfo = document.getElementById(`${id}`);
         let itemDetails = moreInfo.parentElement.parentElement
         if (active){
-            if (document.querySelector(`.active`).id === id) {
-                moreInfo.classList.toggle('active');
+            if (document.querySelector(`.activePannel`).id === id) {
+                moreInfo.classList.toggle('activePannel');
                 moreInfo.style.display = "none";
                 itemDetails.style.paddingBottom = "20px";
                 itemDetails.style.backgroundColor = "#f3a561";
@@ -48,11 +47,11 @@ export default function Details(props){
             }
             else {
             active.style.display = "none";
-            active.classList.toggle('active');
+            active.classList.toggle('activePannel');
             active.parentElement.parentElement.style.paddingBottom = "20px";
             active.parentElement.parentElement.style.width = "20%";
             active.parentElement.parentElement.style.backgroundColor = "#f3a561";
-            moreInfo.classList.toggle('active');
+            moreInfo.classList.toggle('activePannel');
             itemDetails.style.width = "40%";
             itemDetails.style.backgroundColor = "#f7c59a";
             moreInfo.style.display = "block";
@@ -63,7 +62,7 @@ export default function Details(props){
             itemDetails.style.paddingBottom = "0";
             itemDetails.style.width = "40%";
             itemDetails.style.backgroundColor = "#f7c59a";
-            moreInfo.classList.toggle('active');
+            moreInfo.classList.toggle('activePannel');
             moreInfo.style.display = "block";
             setButtonText("Less Info");
         } 

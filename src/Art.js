@@ -1,4 +1,5 @@
 import React from "react";
+import loader from "./media/loader.gif";
 
 
 export default function Art(props){
@@ -17,7 +18,7 @@ export default function Art(props){
         return(
             <span className="ItemDetails">
                 <h2>{props.name}</h2>
-                <a href={image} target="_blank"><img src={image} alt={props.name} /></a>
+                <img src={image} alt={props.name} />
                 <ul>
                     <li>Has Fake: {falseIcon} {hasFake}</li>
                     <li>Buy for: {buyPrice} bells</li>
@@ -30,5 +31,10 @@ export default function Art(props){
     }
  
 else 
-    {return "currently loading"}
+    {return (
+        <div className="loading">
+            <h2>Currently Loading</h2>
+            <img src={loader} alt="loading" />
+        </div>)
+    }
 }

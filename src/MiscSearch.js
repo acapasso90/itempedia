@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import Items from "./Items.js";
+import loader from "./media/loader.gif";
+
 
 export default function MiscSearch(){
     const [miscData, setMiscData] = useState();
@@ -73,5 +75,10 @@ export default function MiscSearch(){
     )}
 
 else 
-    {return "currently loading"}
+    {return (
+        <div className="loading">
+            <h2>Currently Loading</h2>
+            <img src={loader} alt="loading" />
+        </div>)
+    }
 }
