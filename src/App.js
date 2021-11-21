@@ -4,6 +4,7 @@ import WallMountedSearch from './WallMountedSearch';
 import MiscSearch from './MiscSearch';
 import ArtSearch from "./ArtSearch";
 import Header from "./Header";
+import ScrollTop from './ScrollTop';
 import { BrowserRouter as Router, Routes, Route, NavLink} from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ function App() {
               <Route path="/misc" element={<MiscSearch />} />
               <Route path="/art" element={<ArtSearch />} />
           </Routes>
+          <ScrollTop />
           <footer>
             App made by <a href="https://www.amandacapasso.com" target="_blank" rel="noreferrer" > Amanda Capasso </a>
           </footer>

@@ -61,8 +61,6 @@ export default function Header(){
 <div className="header">
 <header>
                     <div className="row">
-                        
-                        <div className="row">
                             <div className="bubble">
                                 <div className="iconCol">
                                     <NavLink to="/" onClick={homeActive}> <div className="navText">House </div> 
@@ -93,7 +91,6 @@ export default function Header(){
                                     <p> Itempedia </p>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </header>
 
