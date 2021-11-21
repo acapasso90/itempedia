@@ -8,7 +8,6 @@ export default function WallMountedSearch(){
     let searchText = null;
 
     useEffect(() => {
-
         let mounted = true;
         const cancelTokenSource = axios.CancelToken.source();
        if (mounted) {
@@ -17,6 +16,10 @@ export default function WallMountedSearch(){
                setWallmountedData( Object.entries(response.data))}
            );
       }
+      return function cleanup() {
+        mounted = false
+        cancelTokenSource.cancel();
+    }
     }, [])
 
     function formSubmit(event){

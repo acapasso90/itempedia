@@ -5,14 +5,10 @@ import Art from "./Art.js";
 
 
 export default function HouseWareSearch(){
-    const [loaded, setLoaded] = useState(false);
     const [artData, setArtData] = useState();
     const [searchterm, setSearchterm] = useState("");
     let searchText = null;
 
-    function Loaded(){
-        setLoaded(true);
-    }
 
     useEffect(() => {
         let mounted = true;
@@ -21,8 +17,11 @@ export default function HouseWareSearch(){
            axios.get(`http://acnhapi.com/v1/art/`).then(
                response => { setArtData(Object.entries(response.data))}
            )
-           Loaded()
       }
+      return function cleanup() {
+        mounted = false
+        cancelTokenSource.cancel();
+    }
     }, [])
 
     function formSubmit(event){

@@ -15,6 +15,10 @@ export default function MiscSearch(){
                response => {setMiscData(Object.entries(response.data))}
            )
       }
+      return function cleanup() {
+        mounted = false
+        cancelTokenSource.cancel();
+    }
     }, [])
 
     function formSubmit(event){

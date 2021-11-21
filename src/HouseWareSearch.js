@@ -15,6 +15,10 @@ export default function HouseWareSearch(){
                response => { setHousewareData(Object.entries(response.data))}
            )
       }
+      return function cleanup() {
+        mounted = false
+        cancelTokenSource.cancel();
+    }
     }, [])
 
     function formSubmit(event){
