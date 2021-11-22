@@ -13,7 +13,7 @@ export default function WallMountedSearch(){
         let mounted = true;
         const cancelTokenSource = axios.CancelToken.source();
        if (mounted) {
-        axios.get(`http://acnhapi.com/v1/wallmounted/`).then(
+        axios.get(`https://acnhapi.com/v1/wallmounted/`).then(
             response => {
                setWallmountedData( Object.entries(response.data))}
            );

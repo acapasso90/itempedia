@@ -12,7 +12,7 @@ export default function HouseWareSearch(){
         let mounted = true;
         const cancelTokenSource = axios.CancelToken.source();
        if (mounted) {
-           axios.get(`http://acnhapi.com/v1/houseware`).then(
+           axios.get(`https://acnhapi.com/v1/houseware`).then(
                response => { setHousewareData(Object.entries(response.data))}
            )
       }

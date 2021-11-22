@@ -13,7 +13,7 @@ export default function MiscSearch(){
         let mounted = true;
         const cancelTokenSource = axios.CancelToken.source();
        if (mounted) {
-           axios.get(`http://acnhapi.com/v1/misc`).then(
+           axios.get(`https://acnhapi.com/v1/misc`).then(
                response => {setMiscData(Object.entries(response.data))}
            )
       }
