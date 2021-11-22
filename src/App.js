@@ -22,6 +22,10 @@ function App() {
           </Routes>
           <ScrollTop />
           <footer>
+            <div className="disclaimer">
+                All images, information, quotes, and characters found on the app are the sole property of Nintendo and Animal Crossing and are only used for 
+                non-commercial and educational purpose.
+            </div>
             App made by <a href="https://www.amandacapasso.com" target="_blank" rel="noreferrer" > Amanda Capasso </a>
           </footer>
         </div>

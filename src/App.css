@@ -10,6 +10,8 @@ text-decoration: none;}
 
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 body, header {background-color: #fdf3c9;}
@@ -55,10 +57,11 @@ button:hover {background-color: #f0b786;
 }
 
 .moreInfoButton {background-color: #ca6710;
+  margin-top: 25px;
 }
 
 
-.container {width: 100vw;
+.container {width: 100%;
   min-height: 100vh;
 position: relative;}
 
@@ -66,9 +69,14 @@ position: relative;}
 margin-left: auto;
 margin-right: auto;}
 
+.disclaimer {font-size: 10pt;
+  padding-bottom: 5px;
+}
+
 form {position: fixed;
 top: 4%;
-right: 1%;}
+right: 1%;
+}
 
 form button{  height: 30px;}
 
@@ -115,13 +123,13 @@ input {background-color: #ee9d55;
   width: 98%;
 }
 
-.itemSearch, .loading {margin-top: 110px;
-padding-bottom: 35px;}
+.itemSearch, .loading {padding-top: 110px;
+padding-bottom: 65px;}
 
 .artgrid, .grid {display: flex;
   flex-direction: row;
  flex-wrap: wrap;
- width: 95%;
+ width: 98%;
  justify-content: center;
 }
 
@@ -135,6 +143,10 @@ padding-bottom: 35px;}
 max-height: 40px;
 position: relative;
 top: 20px}
+
+.loading img {width: 250px;
+position: relative;
+top: -30px;}
 
 .navIcon {width: 37px;
 }
