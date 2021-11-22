@@ -80,6 +80,7 @@ margin-right: auto;}
 form {position: fixed;
 top: 4%;
 right: 1%;
+display: inline;
 }
 
 form button{  height: 30px;}
@@ -171,3 +172,35 @@ ul {list-style: none;
   margin-left: auto;
   margin-right: auto;
 padding: 0;}
+
+@media only screen and (max-width: 880px) and (min-width: 770px){
+  header .col {
+    left: 36.8%;}
+    
+}
+
+@media only screen and (max-width: 769px){
+
+  form {
+    top: 12%;
+    }
+
+  header {height: 140px;}
+
+  header .col { 
+    left: 1%;
+    top: 44%;
+    width: 20%;
+  }
+
+
+  .ItemDetails {min-width: 250px!important;}
+
+  .itemSearch, .loading {padding-top: 130px;
+    padding-bottom: 105px;}
+  
+}
+
+@media only screen and (max-width: 549px){ 
+  header .col {display: none;}
+}
