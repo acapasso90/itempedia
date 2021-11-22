@@ -127,7 +127,6 @@ input {background-color: #ee9d55;
   width: 98%;
 }
 
-.itemSearch {position: relative;}
 
 .itemSearch, .loading {padding-top: 110px;
 padding-bottom: 65px;}
@@ -183,7 +182,7 @@ padding: 0;}
 @media only screen and (max-width: 769px){
 
   form {
-    top: 12%;
+    top: 100px;
     }
 
   header {height: 140px;}
@@ -203,6 +202,10 @@ padding: 0;}
 }
 
 @media only screen and (max-width: 549px){ 
+
+  textarea:focus, input:focus{
+    outline: none;
+}
 
   header .col {display: none;}
 }
