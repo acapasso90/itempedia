@@ -24,7 +24,8 @@ export default function HouseWareSearch(){
 
     function formSubmit(event){
         event.preventDefault();
-        setSearchterm(searchText);
+        if (searchText){
+        setSearchterm(searchText)}
     }
 
     function setSearch(event){
