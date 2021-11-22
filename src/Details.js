@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 
 export default function Details(props){
+    const [buttonText, setButtonText] = useState('More Info');
+
+    
     const detail = props.data;
     let buyprice = `${detail[`buy-price`]} bells`;
     if (detail[`buy-price`] === null){buyprice = "Cannot Buy Item";}
@@ -29,7 +32,6 @@ export default function Details(props){
     if (detail.canCustomizePattern){customizablePattern = `Able to customize pattern`; customPatternIcon = <i className="fas fa-check-circle" style={{color: "green"}}></i>}
     else {customizablePattern = `Unable to customize pattern`; customPatternIcon = <i className="fas fa-times-circle" style={{color: "red"}}></i>}
     const id = detail[`file-name`];
-    const [buttonText, setButtonText] = useState('More Info');
 
 
     function showInfo(){

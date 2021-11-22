@@ -43,9 +43,12 @@ button, input::placeholder, .ItemDetails, .searchterm {color: #440f0f; }
 
 button, input {background-color: #ee9d55;
   border: 4px solid #702b2b;
+  font-weight: bolder;
   box-shadow: inset -1px 0px 2px #6d310f;}
 
+
 .topButton {background-color: #4d860b;
+  height: 35px;
 color: #fff8f2; }
 
 button:active {position: relative;
@@ -57,6 +60,7 @@ button:hover {background-color: #f0b786;
 }
 
 .moreInfoButton {background-color: #ca6710;
+  height: 30px;
   margin-top: 25px;
 }
 
@@ -110,7 +114,7 @@ input {background-color: #ee9d55;
 
 .ItemDetails {
   background-color: #f3a561;
-  border: 4px solid #702b2b;
+  border: 6px solid #702b2b;
   box-shadow: inset -1px -1px 5px #914215;
   border-radius: 3px;
   width: 21%;
@@ -119,7 +123,7 @@ input {background-color: #ee9d55;
   margin: 0 1.25% 2% 1.25%;
 }
 
-.ItemDetails h2 {min-height: 58px;
+.ItemDetails h2 {min-height: 87px;
   width: 98%;
 }
 
@@ -163,4 +167,7 @@ bottom: 1%;
 right: 1%;}
 
 ul {list-style: none;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 padding: 0;}
