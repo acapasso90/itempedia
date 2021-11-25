@@ -45,7 +45,7 @@ export default function HouseWareSearch(){
                 <div className="grid" >
                     {housewareData.slice(0, housewareData.length).map(
                             function(item, index){
-                                const name = item[0].replace(/_/g, " ");
+                                const name = item[0].replace(/_/g, " ").toLowerCase();
                                 const theme = item[1][0][['hha-concept-1']];
                                 const theme2 = item[1][0][['hha-concept-2']];
                                 // if theme exists and includes searchterm display item info

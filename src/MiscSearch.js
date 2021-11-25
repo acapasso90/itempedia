@@ -45,7 +45,7 @@ export default function MiscSearch(){
                 <div className="grid" >
                 {miscData.slice(0, miscData.length).map(
                     function(item, index){
-                        const name = item[0].replace(/_/g, " ");
+                        const name = item[0].replace(/_/g, " ").toLowerCase();
                         const theme = item[1][0][['hha-concept-1']];
                         const theme2 = item[1][0][['hha-concept-2']];
                         // if theme exists and includes searchterm display item info
