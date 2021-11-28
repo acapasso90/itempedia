@@ -61,7 +61,7 @@ export default function Art(props){
         return(
             <span className="ItemDetails">
                 <h2>{name}</h2>
-                <img src={image} alt={name} /> <br />
+                <img src={image} alt={name} loading="lazy" /> <br />
                 <div> Has Fake: {falseIcon} {hasFake} </div>
                 <button className="moreInfoButton" onClick={showInfo}> {buttonText} </button>
                     <div className="hidden" id={`${formatName}`}>
